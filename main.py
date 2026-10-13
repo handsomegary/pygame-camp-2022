@@ -1,4 +1,4 @@
-"""Launch the games or run the camp's standard-library examples."""
+"""Launch the camp games or the optional class design demonstration."""
 
 from __future__ import annotations
 
@@ -48,9 +48,9 @@ def choose_game(pygame) -> str | None:
                         if rect.collidepoint(event.pos):
                             return name
             screen.fill((18, 25, 43))
-            screen.blit(small.render("LEARN PYTHON / MAKE SOMETHING PLAYABLE", True, (132, 153, 183)), (52, 58))
+            screen.blit(small.render("PYGAME / BUILD PLAYABLE GAMES", True, (132, 153, 183)), (52, 58))
             screen.blit(title.render("Pygame Camp", True, (245, 242, 233)), (48, 98))
-            screen.blit(text.render("Two games. Five lessons. One Python project.", True, (163, 177, 198)), (52, 171))
+            screen.blit(text.render("Two games. Practical Pygame notes.", True, (163, 177, 198)), (52, 171))
             pointer = pygame.mouse.get_pos()
             for name, rect in cards:
                 hovered = rect.collidepoint(pointer)
@@ -88,15 +88,11 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--game", choices=("popcat", "snake"), help="start one game directly")
-    group.add_argument("--example", choices=("basics", "containers", "classes"), help="run a lesson without Pygame")
+    group.add_argument("--example", choices=("classes",), help="run the class design demonstration without Pygame")
     group.add_argument("--smoke-test", action="store_true", help="briefly render both games without a window")
     args = parser.parse_args(argv)
     if args.example:
-        example = importlib.import_module(f"examples.{args.example}")
-        if args.example == "basics":
-            example.main([])
-        else:
-            example.main()
+        importlib.import_module(f"examples.{args.example}").main()
         return 0
     if args.smoke_test:
         os.environ["SDL_VIDEODRIVER"] = "dummy"

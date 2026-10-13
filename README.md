@@ -1,12 +1,12 @@
 # 2022 Pygame 營隊：完整實作
 
-依照 2022/05/21 營隊講義的主題，補齊 Python 基礎範例、物件導向範例、Popcat 和貪食蛇，整合為可直接執行的學習專案。
+依照 2022/05/21 營隊講義，完成可直接執行的 Popcat 和貪食蛇，並整理 Pygame、遊戲邏輯與物件導向設計重點。略過變數、運算子、條件與迴圈等 Python 入門教學。
 
 ![遊戲選單](docs/screenshots/menu.png)
 
 ## 需要什麼？
 
-程式全部使用 **Python** 撰寫。基礎範例只用 Python 標準函式庫；遊戲額外需要 **Pygame**。不需要 Node.js、網頁框架、資料庫，也不需要下載圖片或音效。Git 只用於版本管理與上傳 GitHub。
+遊戲使用 **Python + Pygame**，圖案和音效由程式產生。Git 用於版本管理與上傳 GitHub。
 
 支援 Python 3.10 以上，建議使用 **Python 3.12**；固定使用 Pygame 2.6.1。請先從 [Python 官網](https://www.python.org/downloads/) 安裝 Python，Windows 安裝時勾選加入 PATH。Pygame 安裝方式可參考 [官方套件頁](https://pypi.org/project/pygame/)。
 
@@ -62,22 +62,29 @@ python main.py --game snake
 
 Popcat 的單貓模式保留按下／放開動畫和計分，雙貓模式完成講義最後的延伸挑戰。圖案由 Pygame 繪製，短音效由程式產生；沒有音效裝置時仍可遊玩。
 
-## Python 學習範例
+## 講義重點整理
 
-不需要安裝 Pygame 即可執行：
+[閱讀營隊實作筆記](docs/camp-notes.md)：五份講義的內容去向、事件與畫面更新流程、Popcat 狀態與雙貓挑戰、貪食蛇演算法、物件導向設計，以及講義中需要修正的說法。筆記連結到對應程式，方便邊讀邊看實作。
+
+| 原講義 | repo 保留的內容 |
+| --- | --- |
+| `pygame__popcat.pdf` | Pygame 視窗、Surface、事件、字型、音效、Popcat 與雙貓移動 |
+| `snake.pdf` | 移動節拍、轉彎、蛇身、水果、碰撞、記分、重玩與介面 |
+| `Class.pdf` | 實例資料隔離、封裝、繼承與覆寫、可變資料共享陷阱 |
+| `PYTHON__part1.pdf` | 與遊戲相關的函式拆分、遞迴終止及迴圈設計；省略入門語法示範 |
+| `PYTHON__part2.pdf` | 蛇身與座標資料結構、集合排除、亂數；省略容器操作入門 |
+
+另保留一個短 class 範例，示範獨立實例資料與方法覆寫；只需要 Python 標準函式庫：
 
 ```bash
-python main.py --example basics
-python main.py --example containers
 python main.py --example classes
+python -m examples.classes
 ```
 
-也可使用 `python -m examples.basics` 等指令。詳細主題、練習與原講義觀念更新見 [學習指南](docs/learning-guide.md)。
+## 程式位置
 
 | 檔案 | 內容 |
 | --- | --- |
-| `examples/basics.py` | 型別、運算、條件、迴圈、函式、Fibonacci、階乘 |
-| `examples/containers.py` | 字串、list、tuple、dict、set、random |
 | `examples/classes.py` | class、獨立實例資料、繼承、方法覆寫 |
 | `games/popcat.py` | 滑鼠／鍵盤事件、動畫、音效、雙貓移動 |
 | `games/snake.py` | 格狀座標、狀態、定時更新、碰撞與水果生成 |
@@ -92,10 +99,10 @@ python -m unittest discover -s tests -v
 python main.py --smoke-test
 ```
 
-測試涵蓋遊戲規則及範例的邊界條件；smoke test 使用 SDL dummy driver 短暫繪製兩款遊戲，不會開啟視窗。GitHub Actions 會在 Python 3.10、3.12 上執行上述檢查。
+測試涵蓋遊戲規則及 class 範例；smoke test 使用 SDL dummy driver 短暫繪製兩款遊戲，不會開啟視窗。GitHub Actions 會在 Python 3.10、3.12 上執行上述檢查。
 
 ## 來源與素材
 
-實作參考本地五份營隊講義的教學主題，補齊可執行程式。原 PDF 未包含在 repo；本專案沒有依賴講義中未附上的外部圖片或音訊。貓咪插畫與合成音效為本專案原創，與講義示範截圖的素材不同。
+實作參考本地五份營隊講義。筆記整理與遊戲實作相關的內容，並非逐頁轉錄；Python 入門概念及其範例已省略。原 PDF 未包含在 repo。貓咪插畫與合成音效為本專案原創，與講義示範截圖的素材不同。
 
 程式碼採 [MIT License](LICENSE)。Pygame 為獨立安裝的第三方套件，授權見其官方套件頁。

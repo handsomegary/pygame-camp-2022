@@ -19,6 +19,4 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python -m unittest discover -s tests -v
       - run: python main.py --smoke-test
-      - run: python main.py --example basics
-      - run: python main.py --example containers
       - run: python main.py --example classes
