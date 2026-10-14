@@ -105,4 +105,6 @@ python main.py --smoke-test
 
 實作參考本地五份營隊講義。筆記整理與遊戲實作相關的內容，並非逐頁轉錄；Python 入門概念及其範例已省略。原 PDF 未包含在 repo。貓咪插畫與合成音效為本專案原創，與講義示範截圖的素材不同。
 
+目前原講義來源目錄已不存在；五份 PDF 與講義原本搭配的素材並未保存於本 repo，現階段不能再逐頁核對附件名稱或原始內容。成品遊戲所需檔案完整，但這不表示原營隊教材與附件全部保留。現有原創圖片／音效也不當作教授提供的原素材；詳見 [source-completeness.json](source-completeness.json)。
+
 程式碼採 [MIT License](LICENSE)。Pygame 為獨立安裝的第三方套件，授權見其官方套件頁。

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "repository": "pygame-camp-2022",
+  "finished_application_runtime": "complete_after_installing_declared_requirements",
+  "original_course_materials": "not_preserved",
+  "original_source_directory": "no_longer_available",
+  "companion_reference_audit": "cannot_verify_without_original_documents",
+  "original_instruction_pdfs": [
+    {"source_filename": "pygame__popcat.pdf", "status": "not_preserved", "sha256": null},
+    {"source_filename": "snake.pdf", "status": "not_preserved", "sha256": null},
+    {"source_filename": "Class.pdf", "status": "not_preserved", "sha256": null},
+    {"source_filename": "PYTHON__part1.pdf", "status": "not_preserved", "sha256": null},
+    {"source_filename": "PYTHON__part2.pdf", "status": "not_preserved", "sha256": null}
+  ],
+  "original_companion_images_sounds_and_practice_files": {
+    "status": "not_verified",
+    "reason": "Neither the original instruction PDFs nor their source directory are currently available; supplied filenames and bytes cannot be confirmed."
+  },
+  "finished_application_assets": {
+    "status": "generated_by_tracked_code",
+    "artwork": ["games/popcat.py", "games/snake.py", "main.py"],
+    "audio": ["games/popcat.py", "games/snake.py"],
+    "dependency_manifest": "requirements.txt",
+    "attribution": "The current generated artwork and sound are project originals, not copies of the course-supplied assets."
+  },
+  "limitations": [
+    "The current games can be run, but this repository is not a complete archive of the original camp materials.",
+    "Original course assets have not been replaced by invented or unverified downloads."
+  ]
+}
